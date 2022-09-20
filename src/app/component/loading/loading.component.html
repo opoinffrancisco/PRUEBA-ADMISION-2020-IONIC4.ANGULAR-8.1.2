@@ -1,0 +1,26 @@
+<!--<input type="text" />-->
+
+
+<div class="input-group" *ngIf="type=='text'">
+  <div class="input-group-prepend" >
+    <span class="input-group-text">
+      <ion-icon name="mail"></ion-icon>
+    </span>
+  </div>
+  <input type="text" placeholder="{{placeholder}}" class="form-control">
+</div>
+
+<div class="input-group" *ngIf="type=='password'">
+  <div class="input-group-prepend">
+    <span class="input-group-text">
+      <ion-icon name="lock"></ion-icon>
+    </span>
+  </div>
+  <input type="{{typepassword}}" placeholder="{{placeholder}}" class="form-control">
+  <div class="input-group-append">
+    <span class="input-group-text" style="font-size: x-large;">
+      <ion-icon *ngIf="typepassword=='password'" name="eye" (click)="passwordhidden('text')"></ion-icon>
+      <ion-icon *ngIf="typepassword=='text'" name="eye-off" (click)="passwordhidden('password')"></ion-icon>
+    </span>
+  </div>
+</div>

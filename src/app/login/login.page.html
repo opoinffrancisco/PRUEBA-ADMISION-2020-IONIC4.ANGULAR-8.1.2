@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{textComponent[idiomaActual].textTitle}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-padding">
+
+    <ion-grid>
+
+      <ion-row style=" height: 170px;" >
+        <ion-col class="ion-text-center ion-align-self-center" >
+          <img src="assets/icon/logo_mini.png" style="width: 130px;height: 55px;">
+        </ion-col>
+      </ion-row>
+      
+      <ion-row>
+        <ion-col class="ion-text-center">
+          <span style="color:red;">{{mensajeError}}</span>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col class="ion-text-center">
+          <send-input #txtMail [type]="'mail'" [placeholder]="'Mail'" ></send-input>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col class="ion-text-center">
+          <send-input #txtPassword [type]="'password'" [placeholder]="textComponent[idiomaActual].textPlaceholderPassword" ></send-input>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col class="ion-text-center">
+          <ion-button (click)="login()" expand="block" color="primary">{{textComponent[idiomaActual].btnLogin}}</ion-button>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col class="ion-text-center">
+          <span>{{textComponent[idiomaActual].textSignin}} <a routerLink="/">{{textComponent[idiomaActual].textSigninLink}}</a></span>
+          <br>
+          <a routerLink="/">{{textComponent[idiomaActual].textForgotPassword}}</a>
+        </ion-col>
+      </ion-row>  
+
+      <ion-row style="padding: 10px 0px;">
+        <ion-col class="ion-text-center">
+          <span class="btn-idioma" *ngIf="idiomaActual!=0" (click)="elegirIdioma(0)">EN</span>
+          <span class="btn-idioma" *ngIf="idiomaActual!=1" (click)="elegirIdioma(1)">ES</span>
+        </ion-col>
+      </ion-row>  
+
+    </ion-grid>
+    
+  </div>
+</ion-content>

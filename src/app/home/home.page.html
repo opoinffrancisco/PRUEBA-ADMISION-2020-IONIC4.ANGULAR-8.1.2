@@ -1,0 +1,46 @@
+<ion-content>
+  <div class="ion-padding">
+
+    <ion-grid>
+
+      <ion-row style=" height: 200px;" >
+        <ion-col class="ion-text-center ion-align-self-center" >
+          <img src="assets/icon/logo_mini.png" style="width: 130px;height: 55px;">
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col class="ion-text-center">
+          <span>{{textComponent[idiomaActual].textLogin}} <a routerLink="/login">{{textComponent[idiomaActual].textLoginLink}}</a></span>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col class="ion-text-center">
+          <span>{{textComponent[idiomaActual].textSignin}} <a routerLink="/">{{textComponent[idiomaActual].textSigninLink}}</a></span>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col class="ion-text-center">
+          <a routerLink="/">{{textComponent[idiomaActual].textForgotPassword}}</a>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col class="ion-text-center">
+          <a routerLink="/">{{textComponent[idiomaActual].textSupport}}</a>
+        </ion-col>
+      </ion-row>  
+
+      <ion-row style="padding: 10px 0px;">
+        <ion-col class="ion-text-center">
+          <span class="btn-idioma" *ngIf="idiomaActual!=0" (click)="elegirIdioma(0)">EN</span>
+          <span class="btn-idioma" *ngIf="idiomaActual!=1" (click)="elegirIdioma(1)">ES</span>
+        </ion-col>
+      </ion-row>  
+
+    </ion-grid>
+    
+  </div>
+</ion-content>
