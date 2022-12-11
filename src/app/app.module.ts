@@ -10,7 +10,7 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
-import { LoadingComponent } from './component/loading/loading.component';
+import { LoadingService } from './util/loading.service';
 
 import { UserService } from './api/user.service';
 
@@ -26,9 +26,9 @@ import { UserService } from './api/user.service';
   ],
   providers: [
     UserService,
+    LoadingService,
     StatusBar,
     SplashScreen,
-    LoadingComponent,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  private textComponent =  [
+  public textComponent =  [
       {
         textLogin:  'You do have an account?',
         textLoginLink:  'Log in',
@@ -25,7 +25,7 @@ export class HomePage {
         textSupport:  'Soporte'
       },
   ];
-  private idiomaActual: number = (localStorage.getItem('idiomaActual'))? parseInt(localStorage.getItem('idiomaActual')) :0;
+  public idiomaActual: number = (localStorage.getItem('idiomaActual'))? parseInt(localStorage.getItem('idiomaActual')) :0;
 
   constructor() {}
 

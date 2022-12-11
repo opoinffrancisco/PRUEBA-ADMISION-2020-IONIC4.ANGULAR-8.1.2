@@ -1,12 +1,14 @@
-import { Component } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { LoadingController } from '@ionic/angular';
+import { environment } from '../../environments/environment';
 
-@Component({
-  selector: 'loading',
-  templateUrl: 'loading.component.html',
-  styleUrls: ['./loading.component.scss']
+@Injectable({
+  providedIn: 'root'
 })
-export class LoadingComponent {
+export class LoadingService {
+
+  private ENV = environment;
+
   constructor(public loadingController: LoadingController) {}
 
   async presentLoading() {
@@ -35,5 +37,6 @@ export class LoadingComponent {
   dismiss() {
     this.loadingController.dismiss();
   }
+
 
 }

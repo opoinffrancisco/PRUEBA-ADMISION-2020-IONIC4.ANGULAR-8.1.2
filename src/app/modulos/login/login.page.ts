@@ -1,9 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { NavController } from '@ionic/angular';
-import { LoadingComponent } from './../component/loading/loading.component';
-import { SendInputComponent } from './../component/send-input/send-input.component';
-import { UserService } from './../api/user.service';
+import { LoadingService } from './../../util/loading.service';
+import { SendInputComponent } from './../../component/send-input/send-input.component';
+import { UserService } from './../../api/user.service';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +12,7 @@ import { UserService } from './../api/user.service';
 })
 export class LoginPage implements OnInit {
 
-  private textComponent =  [
+  public textComponent =  [
     {
       textTitle: 'Log in',
       btnLogin:  'Login',
@@ -34,7 +34,7 @@ export class LoginPage implements OnInit {
       textLoad : 'Por favor espere...',
     },
   ];
-  private idiomaActual: number = (localStorage.getItem('idiomaActual'))? parseInt(localStorage.getItem('idiomaActual')) :0;
+  public idiomaActual: number = (localStorage.getItem('idiomaActual'))? parseInt(localStorage.getItem('idiomaActual')) :0;
 
   @ViewChild('txtMail', {static: false}) txtMail: SendInputComponent;
   @ViewChild('txtPassword', {static: false}) txtPassword: SendInputComponent;
@@ -42,7 +42,7 @@ export class LoginPage implements OnInit {
   mensajeError = '';
 
   constructor(
-    public loading: LoadingComponent, 
+    public loading: LoadingService, 
     public servicio: UserService,
     public router: Router,
     private navCtrl: NavController) {}

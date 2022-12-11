@@ -9,7 +9,7 @@ import { LoginPageRoutingModule } from './login-routing.module';
 import { LoginPage } from './login.page';
 
 // Component
-import { SendInputComponent } from './../component/send-input/send-input.component';
+import { SendInputComponent } from './../../component/send-input/send-input.component';
 
 @NgModule({
   imports: [
