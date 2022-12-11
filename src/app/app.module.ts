@@ -12,7 +12,6 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { LoadingComponent } from './component/loading/loading.component';
 
-import { configService } from './api/config.service';
 import { UserService } from './api/user.service';
 
 
@@ -26,7 +25,6 @@ import { UserService } from './api/user.service';
     AppRoutingModule
   ],
   providers: [
-    configService,
     UserService,
     StatusBar,
     SplashScreen,

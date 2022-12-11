@@ -34,7 +34,7 @@ export class LoginPage implements OnInit {
       textLoad : 'Por favor espere...',
     },
   ];
-  private idiomaActual: number = 0;
+  private idiomaActual: number = (localStorage.getItem('idiomaActual'))? parseInt(localStorage.getItem('idiomaActual')) :0;
 
   @ViewChild('txtMail', {static: false}) txtMail: SendInputComponent;
   @ViewChild('txtPassword', {static: false}) txtPassword: SendInputComponent;
@@ -52,10 +52,10 @@ export class LoginPage implements OnInit {
 
   elegirIdioma(idiomaNuevo){
     this.idiomaActual = idiomaNuevo;
+    localStorage.setItem('idiomaActual', idiomaNuevo)
   }
 
   login(){
-    //this.router.navigateByUrl('/loby');
     let routerr = this.router
 
     let datos_ = {
@@ -70,10 +70,10 @@ export class LoginPage implements OnInit {
       this.servicio.login(datos_, (result) => {
           if (result._body) {
 
-            const datos = result;
+            const datos = JSON.parse(result._body);
+            console.log(datos)
             if (datos.error === false) {
               window.localStorage.setItem('token', datos.token);
-              console.log(datos, JSON.stringify(datos));
               routerr.navigateByUrl('/loby');
               this.loading.dismiss();
 

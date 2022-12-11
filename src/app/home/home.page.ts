@@ -25,12 +25,13 @@ export class HomePage {
         textSupport:  'Soporte'
       },
   ];
-  private idiomaActual: Number = 0;
+  private idiomaActual: number = (localStorage.getItem('idiomaActual'))? parseInt(localStorage.getItem('idiomaActual')) :0;
 
   constructor() {}
 
   elegirIdioma(idiomaNuevo){
     this.idiomaActual = idiomaNuevo;
+    localStorage.setItem('idiomaActual', idiomaNuevo)
   }
 
 

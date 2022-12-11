@@ -1,20 +1,21 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
-import { configService } from '../api/config.service';
+import { environment } from './../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
+  private ENV = environment;
+
   constructor(
-    public http: Http,
-    public config : configService) 
+    public http: Http) 
   { }
 
   login(datos_,callback){
 
-    this.http.post(this.config.url_servidor+'5e2c87d33100007500267f37',
+    this.http.post(this.ENV.url_servidor+'1b1602b6-2b60-40a3-a80b-3780b9bb9aa8',
     {
         datos:datos_
     }).subscribe((result: any) => {
