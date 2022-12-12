@@ -28,4 +28,7 @@ npm-debug.log*
 /node_modules
 /platforms
 /plugins
-/www
+
+
+#/www (se comenta para poder subir la carpeta www al servidor de produccion o prueba )
+
