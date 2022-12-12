@@ -29,20 +29,6 @@ npm-debug.log*
 /platforms
 /plugins
 
-# PARA LA RAMA BUILD
-/e2e
-/resources
-/src
-angular.json
-browserslist
-config.xml
-ionic.config.json
-karma.conf.js
-package-lock.json
-package.json
-tsconfig.app.json
-tsconfig.json
-tsconfig.spec.json
-tslint.json
 
-#/www
+#/www (se comenta para poder subir la carpeta www al servidor de produccion o prueba )
+
